@@ -1,0 +1,21 @@
+todo:
+//easy
+0) save slideshow state and load it and also move left when display mode.
+1)nicer look to all - design
+2)finish saving.	
+3)add a few more - its so easy now templates
+
+5)make demo and upload. - git and internet
+1)edit files in directories and add docs.
+
+done:
+1)disapear the input in present mode.
+2 ) fix arrage - do not change entiraly, just a little. 
+3 ) enable more line control - color shape and so on.
+	color, out of middle
+
+7 ) writing editing.
+6 ) image stay the same size after upload
+including easy adding.bug fixing.
+6 ) lines flexability
+4)fix screenshot

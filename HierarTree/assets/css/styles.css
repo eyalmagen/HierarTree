@@ -1,0 +1,191 @@
+
+body {
+
+    background-image: url("../img/backgrounds/pexels-photo-461771.jpeg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#slideshow {
+    float: left;
+    margin: 0.7%;
+    border-radius: 2% 14% 2% 4%;
+    box-shadow: 7px 11px 17px 5px rgba(0, 0, 0, 0.8);
+    width: 72vw;
+    height: 86vh;
+    margin-top: 1%;
+    margin-left: 1%;
+    background-image: url("../img/backgrounds/background-pictures-images-and-stock-photos-istock-11.jpeg");
+    background-size: cover;
+    background-position: center;
+    transition: background-image 4s, width 1.5s, height 2s;
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+.Vertical, .Horizontal {
+    /*  display:none;*/
+    position: absolute;
+    background-color: #000000;
+    z-index: 3;
+    /*box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);*/
+}
+
+.Circle, .Circle_mini_Lego {
+    position: absolute;
+    background-color: #000000;
+    z-index: 3;
+    border-radius: 100%;
+}
+
+.Circle_mini_Lego {
+    height: 15px;
+    width: 15px;
+    top: -3px;
+}
+
+.evo-colorind {
+    display: inherit;
+}
+
+.DropDownLego {
+    background-color: #29e;
+    border-radius: 15%;
+    padding: 0.5%;
+    margin: 2% 2%;
+    width: 75px;
+    height: 100px;
+    position: relative;
+    border-style: solid;
+    border-color: #145;
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+    z-index: 2002;
+}
+
+.Lego {
+    overflow: hidden;
+    background-color: #29e;
+    border-radius: 15%;
+    padding: 0.5%;
+    /*margin: 2% 2%;*/
+    width: 10%;
+    height: 20%;
+    position: absolute;
+    border-style: solid;
+    border-color: #145;
+    border-color: rgba(0, 0, 0, 0.61);
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+    z-index: 5;
+    transition: border-radius 1s, box-shadow 1s, background-color 0.1s, background-image 0.3s;
+}
+
+.chosen_legoes {
+    position: absolute;
+    float: left;
+    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+}
+
+.DrawLineFromHere {
+    border-radius: 40%;
+}
+
+#chosen_area {
+    border: solid;
+    border-color: #0f0f0f;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 3;
+    position: absolute;
+}
+
+.wrap_edit_color {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.structure_b {
+    width: 60%;
+    float: left;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 2px solid #0a3c59;
+    border-radius: 17% 17% 67% 17%;
+    padding: 3%;
+    border-style: solid;
+    border-color: #2F4F4F;
+    text-align: left;
+    margin: 2%;
+    margin-left: 5%;
+}
+
+.structure_b:active {
+    text-shadow: #1e4158 0 1px 0;
+    border: 2px solid #0a3c59;
+    background: #b88112;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eb6c17), to(#3e779d));
+    background: -webkit-linear-gradient(top, #eb6c17, #b88112);
+    background: -moz-linear-gradient(top, #eb6c17, #b88112);
+    background: -ms-linear-gradient(top, #eb6c17, #b88112);
+    background: -o-linear-gradient(top, #eb6c17, #b88112);
+    background-image: -ms-linear-gradient(top, #eb6c17 0%, #b88112 100%);
+    color: #fff;
+    margin: 2%;
+    margin-left: 5%;
+    width: 60%;
+    padding: 3%;
+}
+
+#box1 {
+    width: 400px;
+    height: 300px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.change_pic {
+    cursor: pointer;
+    text-align: center;
+    width: 40%;
+    height: auto;
+    padding: 3%;
+    margin-top: 1%;
+    margin-left: 1%;
+    position: absolute;
+    opacity: 1;
+    border-radius: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(52, 116, 163, 0.91)), to(#302ff9));
+    background: -webkit-linear-gradient(top, rgba(52, 116, 163, 0.91), #302ff9);
+}
+#push_down{
+    margin-left: 45%;
+}
+
+#chose_stretch_x, #chose_stretch_y, #slide_length, #slide_width {
+    margin-left: 10%;
+    width: 40%;
+    border-width: 2px;
+    background-color: #6b7998;
+}
+
+
