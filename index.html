@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title id="title">hierarTree</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/template.css">
+    <link rel="stylesheet" href="assets/css/evol-colorpicker.css">
+    <link rel="stylesheet" href="assets/css/headline.css">
+    <link rel="stylesheet" href="assets/css/header-user-dropdown.css">
+    <link rel="stylesheet" href="assets/css/container.css">
+    <link rel="stylesheet" href="assets/css/bubble.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/edit_text.css">
+
+    <link rel="shortcut icon" href="#"/>
+
+    <script src="./assets/js/interact.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery-ui.js"></script>
+    <script src="./assets/js/evol-colorpicker.js"></script>
+    <script src="./assets/js/lines.js"></script>
+    <script src="./assets/js/lines2.js"></script>
+    <script src="./assets/js/log_drag_to_stack.js"></script>
+    <script src="./assets/js/firstdrag.js"></script>
+    <script src="./assets/js/legoes.js"></script>
+    <script src="./assets/js/arrange_legoes.js"></script>
+    <script src="./assets/js/arrange_legoes2.js"></script>
+    <script src="./assets/js/press_handler.js"></script>
+    <script src="./assets/js/jquery.dropdown.js"></script>
+    <script src="./assets/js/canvas2image.js"></script>
+    <script src="./assets/js/undo.js"></script>
+    <script src="./assets/js/html2canvas.js"></script>
+    <script src="./assets/js/dom-to-image.js"></script>
+
+
+</head>
+<!--
+this is comment
+<div id="container_red">
+
+</div>
+//-->
+<body>
+<image id="theimage" hidden="true"></image>
+<!--<h1 class='elegantshadow'>hierarTree</h1>//-->
+<div id="edit_text">
+    <div class="horiz_block">
+        <select class="select_txt" name="txt_size" id="txt_size">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=4>4</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+            <option value=11>11</option>
+            <option value=12>12</option>
+            <option value=14>14</option>
+            <option value=16>16</option>
+            <option value=20>20</option>
+            <option value=22>22</option>
+            <option value=24>24</option>
+            <option value=24>28</option>
+            <option value=24>32</option>
+            <option value=24>36</option>
+            <option value=24>42</option>
+        </select>
+        <select class="select_txt" name="txt_font" id="txt_font">
+            <option value="'verdana',arial,sans-serif"><span style="font-family: Verdana !important;">verdana</span>
+            </option>
+            <option style="font-family: arial;" value="'arial',arial,sans-serif">arial</option>
+            <option style="font-family: Times New Roman;" value="'Times New Roman', arial, Serif">Roman</option>
+            <option value="'Impact',arial,sans-serif"><span style="font-family: Impact;">Impact</span></option>
+            <option style="font-family: Palatino Linotype;" value="'Palatino Linotype',arial,sans-serif">Linotype
+            </option>
+            <option style="font-family: Book Antiqua;" value="'Book Antiqua',arial,sans-serif">Antiqua</option>
+            <option style="font-family: Charcoal;" value="'Charcoal',Charcoal,sans-serif">Charcoal</option>
+            <option style="font-family: FB Armada;" value="'FB Armada',Charcoal,sans-serif">Armada</option>
+            <option style="font-family: calibri;" value="'calibri',Charcoal,sans-serif">calibri</option>
+            <option style="font-family: Garamond;" value="'Garamond',Charcoal,sans-serif">Garamond</option>
+            <option style="font-family: Comic Sans MS;" value="'Comic Sans MS',Charcoal,sans-serif">MS</option>
+        </select>
+    </div>
+    <div class="horiz_block" id="for_annoying_color">
+        <span for="mycolor" id="for_mycolor_text" >Text color</span>
+        <input class="color_rect" id="mycolor" type="text" name="text_color"/>
+    </div>
+    <div class="horiz_block">
+        <div class="small_icon" id="bold_icon"></div>
+        <div class="small_icon" id="italic_icon"></div>
+        <div class="small_icon" id="shade_icon"></div>
+    </div>
+</div>
+<header id="header" class="header-user-dropdown">
+    <div id="edit_text_icon">
+
+    </div>
+    <div class="header-limiter">
+        <h1><a href="#">Hierar<span>Tree</span></a></h1>
+        <nav>
+            <a href="#" onclick="change_to_edit_locations_mode()"> Structure</a>
+            <a href="#" onclick="change_to_edit_style_mode()"> Style</a>
+            <a href="#" onclick="change_to_presentation_mode()"> Present-Mode</a>
+        </nav>
+    </div>
+    <div class="header-user-menu">
+        <ul id="marginbottom_little_class">
+            <li><a href="#" onclick="save_project()" class="save_load">Save</a></li>
+            <label for="fileinput" class="save_load">Load</label>
+            <input id="fileinput" style="visibility:hidden;" type="file"/>
+        </ul>
+    </div>
+</header>
+
+<div id="edit" class="inner-container">
+    <div id="style_mode" class="style_mode">
+        <div class="wrap_for_cube_sizing">
+            <div class="wrap_headline">Cube Color</div>
+            <div class="colors_container">
+                <span class="text_colors">Upper Color</span>
+                <input class="color_rect" id="cube_color"/>
+            </div>
+            <div class="colors_container">
+                <span class="text_colors">Lower Color</span>
+                <input class="color_rect" id="cube_color2" type="text" name="line_color"/>
+            </div>
+        </div>
+
+
+        <div class="wrap_for_cube_sizing">
+            <div class="wrap_headline">Lines & Borders color</div>
+            <div class="colors_container">
+                <span class="text_colors">Line Color</span>
+                <input class="color_rect" id="line_color" type="text" name="line_color"/>
+            </div>
+            <div class="colors_container">
+                <span class="text_colors">Cube Border Color</span>
+                <input class="color_rect" id="border_color" type="text"/>
+            </div>
+        </div>
+        <div class="wrap_for_cube_sizing">
+            <div class="wrap_headline">background Image</div>
+            <label for="getval" class="change_pic">Background</label>
+            <input id="getval" style="visibility:hidden;" type="file" onchange="readURL(event)">
+            <label for="getvalCube" class="change_pic" id="push_down">Cubes</label>
+            <input id="getvalCube" style="visibility:hidden;" type="file" onchange="readURLforCube(event)">
+        </div>
+        <div class="wrap_for_cube_sizing">
+            <div class="colors-wrap">
+                <div class="wrap_headline">Cube Size</div>
+                <div id="cube_size1">
+                    <span for="width_of_lego" id=spansize1" class="center_class">Width</span>
+                    <input class="changing_size_input" id="width_of_lego" type="range" min="3" max="12"
+                           onchange="change_cube_width(event)"/>
+                </div>
+                <div id="cube_size2">
+                    <span for="height_of_lego" id=spansize2" class="center_class">Height</span>
+                    <input class="changing_size_input" id="height_of_lego" type="range" min="5" max="12"
+                           onchange="change_cube_height(event)"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="basic_tools" class="structure_mode">
+
+        <ul class="dropdown">
+            <li><a href="#">Templates</a>
+                <ul class="sub_menu">
+                    <li><a href="#">
+                        <div class="tmclass" id="tm1"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm2"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm3"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm4"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm5"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm6"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm7"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm8"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm9"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm10"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm11"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm12"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm13"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm14"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm15"></div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="tmclass" id="tm16"></div>
+                    </a></li>
+                </ul>
+            </li>
+        </ul>
+        <button id="add_cube" class="structure_button" onclick="Create_new_lego()">
+            create
+        </button>
+        <button id="delete_cube" class="structure_button" onclick="Delete_lego()">
+            delete
+        </button>
+        <button id="back" class="structure_button" onclick="revert_last_action()">
+            back
+        </button>
+        <button id="arrange" class="structure_button">arrange
+        </button>
+        <button id="button_arrange_horizontal" class="structure_button">
+            horizontal
+        </button>
+        <button id="button_arrange_vertical" class="structure_button">vertical
+        </button>
+
+        <div class="explain_next">Strech Horizontal</div>
+        <div id="chose_stretch_x" class="slider"></div>
+        <div class="explain_next">Strech Vertical</div>
+        <div id="chose_stretch_y" class="slider"></div>
+        <div class="explain_next">Slide Length</div>
+        <div id="slide_length" class="slider"></div>
+        <div class="explain_next">Slide Width</div>
+        <div id="slide_width" class="slider"></div>
+    </div>
+</div>
+
+<div id="slideshow">
+    <div id="chosen_area"/>
+</div>
+
+</body>
+
+
+<script src="./assets/js/header_functions.js"></script>
+<script src="./assets/js/edit_structure_functions.js"></script>
+<script src="./assets/js/edit_styles_functions.js"></script>
+<script src="./assets/js/chosing_rect.js"></script>
+<script src="./assets/js/load_templates.js"></script>
+<script src="./assets/js/edit_text.js"></script>
+<script src="./assets/js/save.js"></script>
+<script src="./assets/js/screenshot.js"></script>
+
+
+</html>
